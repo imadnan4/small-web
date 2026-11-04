@@ -1,0 +1,21 @@
+{
+  "name": "small-web",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev:api": "npm run start:dev --workspace apps/api",
+    "dev:web": "npm run dev --workspace apps/web",
+    "seed": "npm run seed --workspace apps/api",
+    "test": "npm run test --workspace apps/api && npm run test --workspace apps/web",
+    "build": "npm run build --workspace apps/api && npm run build --workspace apps/web"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6"
+  }
+}
