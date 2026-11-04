@@ -21,6 +21,18 @@ export const SEED_SITES: SeedSite[] = [
         <li>Anything that moved that I could identify without guessing.</li>
       </ul>
       <blockquote>A pool is not a small ocean. It is a small room that the ocean keeps leaving and returning to.</blockquote>
+      <h2>From the notebook</h2>
+      <p>The entries below are copied without correction. The crossings-out are left out. Where I wrote a guess, I have marked it as a guess, because the difference between a guess and an observation is the whole point of keeping a notebook.</p>
+      <h3>12 October, 06:40</h3>
+      <p>The north wall was sheltered and the water was still. I counted four anemones, two of them open. A small crab carried a shell that was too large for it and stopped every few inches to rest. The thermometer read 14 degrees, which is warmer than last week.</p>
+      <h3>19 October, 07:10</h3>
+      <p>Wind from the west, so the outer pools were choppy and the inner ones were clear. The orange starfish was in the third pool from the wall, exactly where it was in August. I am not sure whether starfish have habits or whether I have habits about starfish. Either way, I wrote it down.</p>
+      <h3>26 October, 06:55</h3>
+      <p>No starfish. The pool was full of small brown crabs and a piece of blue rope. The rope was not there last week. I walked the wall twice to make sure I was looking in the right place, then wrote down that I was looking in the right place and still did not see it.</p>
+      <h3>2 November, 07:25</h3>
+      <p>Cold enough that my hands were clumsy. The anemones were closed. A gull stood on the wall and watched me write, which is not an observation about the pool, but the notebook has room for it. The tide came in faster than the forecast said it would.</p>
+      <h3>9 November, 06:50</h3>
+      <p>The starfish is back. It has moved one pool to the left and is smaller than I remember, or I am remembering a different starfish. This is the problem with a ledger that does not include drawings. I have started carrying a pencil.</p>
       <p>Related: <a href="fieldnotes.zz">field notes from the same coast</a>, and the <a href="harbor.zz">harbor log</a>.</p>
       <p>The old harbor page I used to link to is <a href="old-harbor.zz">still not here</a>. I keep the link because the address is part of the story.</p>
     `,
@@ -123,6 +135,10 @@ pour slowly, finish by 3:30</code></pre>
         <li>Prefer the thing that can be repaired with a screwdriver.</li>
         <li>Read the manual before you decide it is broken.</li>
       </ol>
+      <h2>Three things on the bench</h2>
+      <p>The first is a shortwave receiver from the 1970s. It has a dial that moves a needle across a printed card, and no memory of any kind. You have to know where a station was to find it again. This sounds like a limitation until you use a radio that remembers every station for you, and then it sounds like a kind of honesty.</p>
+      <p>The second is a bicycle with five gears. The derailleur is slightly bent, so the chain skips in third. I could replace the derailleur, but the skipping is a useful reminder that the machine is not perfect and neither is the road. I have not replaced it.</p>
+      <p>The third is a laptop with a broken fan. It runs for twenty minutes before it gets too hot to touch. The operating system says everything is fine. The operating system is not holding the laptop. I have ordered a fan and a small screwdriver, and I am reading the manual while I wait.</p>
       <p>The manual is at <a href="repair-manual.zz">repair manual</a>. The weather notes are at <a href="fieldnotes.zz">field notes</a>. The radio page is <a href="radio-static.zz">radio static</a>.</p>
     `,
   },
