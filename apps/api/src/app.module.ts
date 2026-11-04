@@ -1,5 +1,8 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
+import { SitesModule } from "./sites/sites.module";
+import { UsersModule } from "./users/users.module";
+import { VisitsModule } from "./visits/visits.module";
 
 const mongoUri = process.env.MONGODB_URI;
 
@@ -10,6 +13,11 @@ if (!mongoUri) {
 }
 
 @Module({
-  imports: [MongooseModule.forRoot(mongoUri)],
+  imports: [
+    MongooseModule.forRoot(mongoUri),
+    UsersModule,
+    SitesModule,
+    VisitsModule,
+  ],
 })
 export class AppModule {}
