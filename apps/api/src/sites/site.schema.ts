@@ -5,19 +5,19 @@ export type SiteDocument = HydratedDocument<Site>;
 
 @Schema({ timestamps: true })
 export class Site {
-  @Prop({ required: true, unique: true })
+  @Prop({ type: String, required: true, unique: true })
   address!: string;
 
-  @Prop({ required: true, trim: true, maxlength: 160 })
+  @Prop({ type: String, required: true, trim: true, maxlength: 160 })
   title!: string;
 
-  @Prop({ required: true })
+  @Prop({ type: String, required: true })
   html!: string;
 
-  @Prop({ required: true })
+  @Prop({ type: String, required: true })
   text!: string;
 
-  @Prop({ required: true })
+  @Prop({ type: String, required: true })
   author!: string;
 }
 

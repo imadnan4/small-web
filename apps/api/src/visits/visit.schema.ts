@@ -16,16 +16,16 @@ export type VisitDocument = HydratedDocument<Visit>;
 
 @Schema()
 export class Visit {
-  @Prop({ required: true, trim: true })
+  @Prop({ type: String, required: true, trim: true })
   user!: string;
 
-  @Prop({ required: true })
+  @Prop({ type: String, required: true })
   address!: string;
 
-  @Prop({ required: true })
+  @Prop({ type: Date, required: true })
   visitedAt!: Date;
 
-  @Prop({ required: true, enum: VISIT_VIA })
+  @Prop({ type: String, required: true, enum: VISIT_VIA })
   via!: VisitVia;
 }
 
