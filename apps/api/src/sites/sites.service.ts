@@ -50,7 +50,11 @@ export class SitesService {
       throw new NotFoundException(`No site at ${rawAddress}`);
     }
 
-    const site = await this.siteModel.findOne({ address }).lean().exec();
+    const site = await this.siteModel
+      .findOne({ address })
+      .select("address title html author")
+      .lean()
+      .exec();
     if (!site) {
       throw new NotFoundException(`No site at ${address}`);
     }
@@ -95,9 +99,18 @@ export class SitesService {
       return [];
     }
 
+    const terms = q
+      .split(/\s+/)
+      .map((term) => term.replace(/[^\p{L}\p{N}]+/gu, ""))
+      .filter(Boolean);
+
+    if (terms.length === 0) {
+      return [];
+    }
+
     const sites = await this.siteModel
       .find(
-        { $text: { $search: q } },
+        { $text: { $search: terms.join(" ") } },
         { score: { $meta: "textScore" } },
       )
       .sort({ score: { $meta: "textScore" } })
@@ -109,17 +122,13 @@ export class SitesService {
       address: site.address,
       title: site.title,
       author: site.author,
-      snippet: makeSnippet(site.text, q),
+      snippet: makeSnippet(site.text, terms),
     }));
   }
 }
 
-function makeSnippet(text: string, query: string): string {
+function makeSnippet(text: string, terms: string[]): string {
   const lowerText = text.toLowerCase();
-  const terms = query
-    .toLowerCase()
-    .split(/\s+/)
-    .filter(Boolean);
 
   const firstMatch = Math.min(
     ...terms.map((term) => {
