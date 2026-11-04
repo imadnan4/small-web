@@ -75,10 +75,11 @@ export function sanitizeSiteHtml(input: string): SiteContent {
           return { tagName, attribs: href ? { ...attributes, href } : attributes };
         }
 
+        const { href: _originalHref, ...rest } = attributes;
         const address = normalizeAddress(href);
         return {
           tagName,
-          attribs: isValidAddress(address) ? { ...attributes, href: address } : attributes,
+          attribs: isValidAddress(address) ? { ...rest, href: address } : rest,
         };
       },
     },
