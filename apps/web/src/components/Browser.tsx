@@ -225,22 +225,32 @@ export default function Browser() {
     return pageScrollRef.current?.scrollTop ?? 0;
   }, []);
 
+  const beginNavigation = useCallback(() => {
+    setLoading(true);
+    setPageError("");
+    setNotFound(false);
+    setSite(null);
+    setSearchResults([]);
+  }, []);
+
   const navigateTo = useCallback(
     (target: string, via: VisitVia) => {
       viaRef.current = via;
       const scroll = currentScroll();
+      beginNavigation();
       setNav((state) => navigate(state, { kind: "site", address: target }, scroll));
     },
-    [currentScroll],
+    [beginNavigation, currentScroll],
   );
 
   const runSearch = useCallback(
     (query: string) => {
       setSearchQuery(query);
       const scroll = currentScroll();
+      beginNavigation();
       setNav((state) => navigate(state, { kind: "search", query }, scroll));
     },
-    [currentScroll],
+    [beginNavigation, currentScroll],
   );
 
   const goBack = useCallback(() => {
@@ -249,8 +259,9 @@ export default function Browser() {
     }
     viaRef.current = "back";
     const scroll = currentScroll();
+    beginNavigation();
     setNav((state) => back(state, scroll));
-  }, [nav, currentScroll]);
+  }, [beginNavigation, nav, currentScroll]);
 
   const goForward = useCallback(() => {
     if (!canGoForward(nav)) {
@@ -258,8 +269,9 @@ export default function Browser() {
     }
     viaRef.current = "forward";
     const scroll = currentScroll();
+    beginNavigation();
     setNav((state) => forward(state, scroll));
-  }, [nav, currentScroll]);
+  }, [beginNavigation, nav, currentScroll]);
 
   const openLink = useCallback(
     (target: string) => navigateTo(target, "link"),
